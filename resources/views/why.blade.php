@@ -7,15 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<navbar>
-<ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="why">About us</a></li>
-    <li><a href="background">Background music</a></li>
-    <li><a href="Creative">Creative studio</a></li>
-    <li><a href="contact">Contact</a></li>
-</ul>
-</navbar>
+<x-navigation></x-navigation>
 Mūsdienu straujajā dzīves ritmā efektīva laika plānošana un uzdevumu pārvaldība ir kļuvusi par būtisku ikdienas sastāvdaļu. Darāmo darbu saraksta vietne piedāvā strukturētu pieeju, kas palīdz lietotājiem organizēt savus pienākumus un sasniegt mērķus.
 
 Kāpēc darāmo darbu saraksts ir nepieciešams ikvienam?
