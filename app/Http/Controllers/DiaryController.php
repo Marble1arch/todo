@@ -28,4 +28,17 @@ class DiaryController extends Controller{
         ]);
         return redirect("/diaries");
     }
+    public function edit(Diary $diary){
+        return view("diary.edit",compact("diary"));
+    }
+    public function update(Request $request,Diary $diary){
+        $validated = $request->validate([
+            "title" =>["required","max:255"],
+            "body" =>["required","max:255"]
+        ]);
+        $diary->title = $validated["title"];
+        $diary->body = $validated["body"];
+        $diary->save(); 
+        return redirect("/diaries/$diary->id");  
+    }
 }

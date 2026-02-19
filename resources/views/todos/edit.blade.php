@@ -7,7 +7,7 @@
     @csrf
     @method('PUT')
        <label>
-        <input name= "content" value= "<?= $todo->content ?>" />
+        <input name= "content" value= "{{old('content',$todo->content) }}" />
        </label></br>
         @error("content")
             <p>{{ $message }}</p>
