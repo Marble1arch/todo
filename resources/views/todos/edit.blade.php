@@ -1,13 +1,24 @@
 <x-layout>
 <x-slot:title>
-    Izveidot uzdevumu
+    Rediģēt uzdevumu
     </x-slot:title>
-    <h1>Izveidot uzdevumu</h1>
-    <form method="POST" action="/todos">
+    <h1>Rediģēt uzdevumu</h1>
+    <form method="POST" action="/todos/{{$todo->id}}">
     @csrf
-        <input name="content" />
+    @method('PUT')
+       <label>
+        <input name= "content" value= "<?= $todo->content ?>" />
+       </label></br>
         @error("content")
-    <p>{{ $message }}</p>
+            <p>{{ $message }}</p>
+        @enderror
+       <label>
+            Izpildīts:
+            <input name="completed" type="hidden" value="0">
+            <input name="completed" type="checkbox" value="1" {{ old("completed", $todo->completed) ? 'checked' : '' }}>   
+        </label>
+        @error("completed")
+            <p>{{ $message }}</p>
         @enderror
         <button>Saglabāt</button>
     </form>

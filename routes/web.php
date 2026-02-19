@@ -27,4 +27,5 @@ Route::get('/diaries/{diary}', [DiaryController::class, 'show']);
 Route::post('/todos', [ToDoController::class, 'store']);
 Route::post('/diaries', [DiaryController::class, 'store']);
 Route::get('/todos/{todo}/edit', [ToDoController::class, 'edit']);
+Route::put('/todos/{todo}', [ToDoController::class, 'update']);
 
