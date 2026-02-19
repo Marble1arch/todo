@@ -3,5 +3,10 @@
     {{$todo->content}}
     </x-slot:title>
     <h1>{{$todo->content}}</h1>
-    <button ><a href="/todos/{{$todo->id}}/edit">Edit</a></button>
+   <a href="/todos/{{$todo->id}}/edit">Edit</a>
+        <form action="{{$todo->id}}" method="POST">
+        @csrf
+        @method ("delete")
+        <button>Delete</button>
+    </form>
 </x-layout>
