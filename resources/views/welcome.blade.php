@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+@auth
 <x-navigation></x-navigation>
-    <h1>Laravel!</h1>
+    <p>Sveiks, {{ Auth::user()->first_name}}</p>
+    <form action="logout">
+        @csrf
+        @method ('destroy')
+        <button>Logout</button>
+    </form>
+@endauth
 </body>
 </html>
