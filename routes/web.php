@@ -7,22 +7,11 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware("auth");
 Route::get('Welcome', function (){
     return view('Welcomeguest');
 })->middleware("guest");
-Route::get('/why', function () {
-    return view('why');
-});
-Route::get('/background', function () {
-    return view('background');
-});
-Route::get('/Creative', function () {
-    return view('creative');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
+
 Route::get('/todos', [ToDoController::class, 'index'])->middleware("auth");
 Route::get('/diaries', [DiaryController::class, 'index'])->middleware("auth");
 
