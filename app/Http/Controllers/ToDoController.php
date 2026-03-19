@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ToDoController extends Controller{
     public function index()
@@ -15,13 +16,17 @@ class ToDoController extends Controller{
     }
     public function create(ToDo $todo){
         return view("todos.create", compact("todo"));
+        Auth::User;
     }
     public function store(Request $request){
         $validated = $request->validate([
             "content" =>["required","max:255"],
+            "userid" => ["required"]
         ]);
+        dd(user);
         ToDo::create([
             "content" => $validated["content"],
+            "user_id" => $validated["userid"],
             "completed" => false
         ]);
         return redirect("/todos");

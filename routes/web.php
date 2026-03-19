@@ -6,11 +6,11 @@ use App\Http\Controllers\DiaryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 Route::get('/', function () {
-    return view('welcome');
-})->middleware("auth");
-Route::get('Welcome', function (){
     return view('Welcomeguest');
 })->middleware("guest");
+Route::get('/Welcome', function (){
+    return view('welcome');
+})->middleware("auth");
 
 Route::get('/todos', [ToDoController::class, 'index'])->middleware("auth");
 Route::get('/diaries', [DiaryController::class, 'index'])->middleware("auth");

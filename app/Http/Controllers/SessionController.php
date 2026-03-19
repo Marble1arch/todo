@@ -11,7 +11,7 @@ class SessionController extends Controller
 {
     public function destroy(){
         Auth::logout();
-        return redirect('/Welcome');
+        return redirect('/');
     }
     public function create(){
         return view('todos.login');
@@ -27,7 +27,7 @@ class SessionController extends Controller
                   ]);
             }else {
             $request->session()->regenerate();
-            return redirect("/");
+            return redirect("/Welcome");
             }
      }
 }
