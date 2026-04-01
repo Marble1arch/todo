@@ -6,7 +6,7 @@
     <form method="POST" action="/todos">
     @csrf
         <input name="content" />
-        <input name="userid" value="{{$users['id']}}" type="hidden">
+        <input name="userid" value="{{$user}}" type="hidden">
         @error("content")
     <p>{{ $message }}</p>
         @enderror
